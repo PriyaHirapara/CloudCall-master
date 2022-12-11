@@ -1,10 +1,11 @@
-package org.example;
+package StepDefinitions;
 
 import Johnlewis.BasketPage;
 import Johnlewis.HomePage;
 import Johnlewis.MensTShirtsPage;
 import Johnlewis.TShirtsProductPage;
-import cucumber.api.java.en.*;
+import io.cucumber.java.en.*;
+
 
 public class StepDefs
 {

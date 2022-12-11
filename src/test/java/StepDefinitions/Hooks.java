@@ -1,14 +1,14 @@
-package org.example;
+package StepDefinitions;
 
 import Units.BasePage;
 import Units.BrowserManager;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.*;
 
 
-public class Hooks extends BasePage
+public class Hooks
 {
     BrowserManager browserManager = new BrowserManager();
+
     @Before
     public void openBrowser()
     {

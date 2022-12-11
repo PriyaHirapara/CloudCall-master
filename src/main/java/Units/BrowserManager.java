@@ -1,6 +1,8 @@
 package Units;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.example.LoadProperty;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,18 +19,22 @@ public class BrowserManager extends BasePage
         if (BrowserName.equalsIgnoreCase("chrome"))
         {
            // WebDriverManager
-            System.setProperty("webdriver.chrome.driver","BrowserDriver\\chromedriver.exe");
-            driver = new ChromeDriver();
+//            System.setProperty("webdriver.chrome.driver","BrowserDriver\\chromedriver.exe");
+            WebDriverManager.chromedriver().setup();
+            driver = (WebDriver) new ChromeDriver();
+
 
         }else if (BrowserName.equalsIgnoreCase("firefox"))
         {
             System.setProperty("webdriver.gecko.driver","BrowserDriver\\geckodriver.exe");
-            driver = new FirefoxDriver();
+            WebDriverManager.firefoxdriver().setup();
+            driver = (WebDriver) new FirefoxDriver();
 
         }else if(BrowserName.equalsIgnoreCase("edge"))
         {
             System.setProperty("webdriver.edge.driver","");
-            driver = new EdgeDriver();
+            WebDriverManager.edgedriver().setup();
+            driver = (WebDriver) new EdgeDriver();
         } else
         {
             System.out.println("Please provide correct Driver name");

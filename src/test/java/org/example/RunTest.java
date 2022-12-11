@@ -1,14 +1,16 @@
 package org.example;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
+
 @CucumberOptions(
-        features = ".",
-        tags = "@TestCase2",
-        format = {"pretty","html:target\\Destination"})
-public class RunTest
-{
+        plugin = {"pretty", "html:target/cucumber"},
+        features="src/test/resources/Features",
+        glue={"StepDefinitions"},
+        monochrome = true
+        )
+public class RunTest {
 }
